@@ -93,6 +93,10 @@ public class SpellingScreen implements Screen {
 
     public void setLanguage(StateMachine.Language language) {
         setAlphabet(language);
+    }
+
+    public void changeLanguage(StateMachine.Language language) {
+        setAlphabet(language);
         setSpaces(getNewLengthOfWord(getPictureId(), language));
     }
 
