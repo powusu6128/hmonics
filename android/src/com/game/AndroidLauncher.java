@@ -1,10 +1,9 @@
 package com.game;
 
 import android.os.Bundle;
-
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.view.MyGdxGame;
+import view.GdxGame;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
@@ -12,6 +11,6 @@ public class AndroidLauncher extends AndroidApplication {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useImmersiveMode = true;
-		initialize(new MyGdxGame(), config);
-	}
+        initialize(new GdxGame(), config);
+    }
 }

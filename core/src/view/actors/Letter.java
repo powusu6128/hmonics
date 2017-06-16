@@ -1,10 +1,11 @@
-package com.view.actors;
+package view.actors;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Stack;
+import view.AssetManager;
 
 public class Letter extends Stack {
     private ImageButton imageButton;
@@ -12,9 +13,9 @@ public class Letter extends Stack {
 
     public Letter(String name) {
         setName(name);
-        imageButton = new ImageButton(com.view.AssetManager.imageButtonStyle);
+        imageButton = new ImageButton(AssetManager.imageButtonStyle);
         add(imageButton);
-        nameLabel = new Label(name, com.view.AssetManager.skin);
+        nameLabel = new Label(name, AssetManager.buttonSkin);
         nameLabel.setTouchable(Touchable.disabled);
         nameLabel.setAlignment(1);
         nameLabel.setFontScale(3);
