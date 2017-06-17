@@ -1,11 +1,13 @@
-package com.view;
+package view;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import model.Data;
+import view.games.SpellingGameScreen;
 
-public class MyGdxGame extends Game {
+public class GdxGame extends Game {
 
     public static final int WIDTH = 1920;
     public static final int HEIGHT = 1080;
@@ -19,11 +21,13 @@ public class MyGdxGame extends Game {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, WIDTH, HEIGHT);
         viewport = new ExtendViewport(WIDTH, HEIGHT, camera);
+
         batch = new SpriteBatch();
 //        font = new BitmapFont();
+        AssetManager.init();
+        Data.populate();
 
-        AssetManager assetManager = new AssetManager();
-        setScreen(new com.view.spelling.SpellingScreen(this));
+        setScreen(new SpellingGameScreen(this, new view.start.StartScreen(this)));
     }
 
     public void render() {
